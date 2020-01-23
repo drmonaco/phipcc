@@ -49,10 +49,10 @@ StatsGenerator_AVARDA <- function(
 
     # Take breadth values for seropositives. cases and controls. (!) there may be 0 hits
     AVARDA_case_seropos_breadth <- AVARDA_case_data$breadth
-    AVARDA_case_seropos_breadth[, -1][AVARDA_case_seropos[, -1] == 0] <- NA
+    AVARDA_case_seropos_breadth[, -1][AVARDA_case_seropos[, -1] == 0] <- 0
 
     AVARDA_ctrl_seropos_breadth <- AVARDA_ctrl_data$breadth
-    AVARDA_ctrl_seropos_breadth[, -1][AVARDA_ctrl_seropos[, -1] == 0] <- NA
+    AVARDA_ctrl_seropos_breadth[, -1][AVARDA_ctrl_seropos[, -1] == 0] <- 0
 
     output_data$Median.Seropos.Breadth.Case <-
       apply(AVARDA_case_seropos_breadth[,-1], 1, function(x){
